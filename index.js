@@ -1,3 +1,10 @@
-let number = 1;
+const axios = require('axios');
 
-console.log(`your number is ${number}`);
+const fetchData = async () => {
+    const response = await axios.get('https://cat-fact.herokuapp.com/facts');
+    for (item of response.data) {
+        console.log(item.text)
+    }
+}
+
+fetchData()
